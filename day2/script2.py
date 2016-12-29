@@ -32,13 +32,13 @@ def decode(instructions, knum, xi, yi):
     keypad = kpad(knum)
     for line in instructions:
         for command in line:
-            if command.upper() == 'U' and keypad[yi-1][xi] is not bad:
+            if   command.upper() == 'U' and keypad[yi-1][xi] is not bad:
                 yi -= 1
-            if command.upper() == 'D' and keypad[yi+1][xi] is not bad:
+            elif command.upper() == 'D' and keypad[yi+1][xi] is not bad:
                 yi += 1
-            if command.upper() == 'R' and keypad[yi][xi+1] is not bad:
+            elif command.upper() == 'R' and keypad[yi][xi+1] is not bad:
                 xi += 1
-            if command.upper() == 'L' and keypad[yi][xi-1] is not bad:
+            elif command.upper() == 'L' and keypad[yi][xi-1] is not bad:
                 xi -= 1
         print keypad[yi][xi],
     print ''
