@@ -1,6 +1,7 @@
 def read_instructions(datafile):
     f = open(datafile, 'r+')
     instructions = [line.strip() for line in f]
+    f.close()
     return instructions
 
 
