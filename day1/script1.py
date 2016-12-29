@@ -30,15 +30,15 @@ def checkpoints(steps):
 def trace_path(positions):
     # Can probably be done much more concisely and elegantly
     all_positions = []
-    for i in range(len(positions)-1):
+    for i in xrange(len(positions)-1):
         if positions[i+1][0] != positions[i][0] and positions[i+1][0] > positions[i][0]:
-            path = [(j, positions[i+1][1]) for j in range(positions[i][0], positions[i+1][0])]
+            path = [(j, positions[i+1][1]) for j in xrange(positions[i][0], positions[i+1][0])]
         elif positions[i+1][0] != positions[i][0] and positions[i+1][0] < positions[i][0]:
-            path = [(j, positions[i+1][1]) for j in range(positions[i][0], positions[i+1][0], -1)]
+            path = [(j, positions[i+1][1]) for j in xrange(positions[i][0], positions[i+1][0], -1)]
         elif positions[i+1][1] != positions[i][1] and positions[i+1][1] > positions[i][1]:
-            path = [(positions[i+1][0], j) for j in range(positions[i][1], positions[i+1][1])]
+            path = [(positions[i+1][0], j) for j in xrange(positions[i][1], positions[i+1][1])]
         elif positions[i+1][1] != positions[i][1] and positions[i+1][1] < positions[i][1]:
-            path = [(positions[i+1][0], j) for j in range(positions[i][1], positions[i+1][1], -1)]
+            path = [(positions[i+1][0], j) for j in xrange(positions[i][1], positions[i+1][1], -1)]
         all_positions.extend(path)
     all_positions.append(positions[-1])
     return all_positions
