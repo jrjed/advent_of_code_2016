@@ -70,7 +70,7 @@ def find_northpole(info):
     for name, sector in zip(info['decrypted_name'], info['id']):
         searched_name = re.search(r'(.*)(north)(.*)(pole)(.*)', name.lower())
         if searched_name is not None:
-            print(searched_name.groups(), sector)
+            print(searched_name.string, sector)
             break
         else:
             continue
