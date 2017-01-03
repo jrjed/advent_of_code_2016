@@ -17,7 +17,7 @@ def decode_col(columns, rank):
         count = collections.Counter(column)
         if rank.lower() == 'most':
             sel = 0
-        else:
+        elif rank.lower() == 'least':
             sel = len(count) - 1
         letter = count.most_common()[sel][0]
         code += letter
