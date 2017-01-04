@@ -1,3 +1,6 @@
+import re
+
+
 def read_ips(datafile):
     with open(datafile) as f:
         ips = zip(*[line.split() for line in f])
@@ -34,6 +37,18 @@ def tls_check(ips):
     for res in results:
         print res
     return sum(results)
+
+def tls_test(ip):
+    results = []
+    ext_abba = re.search(r'([a-z])(?!\1)([a-z])\2\1'), ip) 
+    int_abba = re.search(r'[([a-z])(?!\1)([a-z])\2\1\]', ip)
+    if ext_abba is not None and int_abba is None:
+        results.append(True)
+    else:
+        return False
+
+def tls_count(ips):
+    pass
     
 
 def main():
