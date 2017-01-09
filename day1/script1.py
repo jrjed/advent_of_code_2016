@@ -46,9 +46,7 @@ def trace_path(positions):
 
 def first_twice_visited(all_positions):
     for i, position in enumerate(all_positions[1:]):
-        if position not in all_positions[:i]:
-            continue
-        else:
+        if position in all_positions[:i]:
             return all_positions[i+1]
 
 
