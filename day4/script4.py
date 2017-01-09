@@ -26,8 +26,6 @@ def real_info(info):
     for i, (name, checksum) in enumerate(zip(info['name'], info['checksum'])):
         if valid(name, checksum):
             real_index.append(i)
-        else:
-            continue
     for key in info.keys():
         info[key] = [info[key][i] for i in real_index]
     return info
@@ -72,8 +70,6 @@ def find_northpole(info):
         if searched_name is not None:
             print(searched_name.string, sector)
             break
-        else:
-            continue
 
 
 def main():
