@@ -15,8 +15,6 @@ def code_cracker(st, door_number):
                 if (piece[5].isdigit() and int(piece[5]) < 8 and
                         code[int(piece[5])] is None):
                     code[int(piece[5])] = piece[6]
-        else:
-            continue
     return ''.join(code)
 
 
