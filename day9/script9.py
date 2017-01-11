@@ -69,7 +69,7 @@ def main():
     # Part 1
     print(len(decompress(read_text('input9.txt'))))
     # Part 2
-    #print(len(full_decompress(read_text('input9.txt'))))
+    # print(len(full_decompress(read_text('input9.txt'))))
     print(norvig(read_text('input9.txt')))
 
 
