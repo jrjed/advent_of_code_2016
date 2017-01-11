@@ -8,9 +8,9 @@ def read_text(datafile):
     return text
 
 
-def find_marker(text, index=None):
+def find_marker(text, index='all'):
     regex = re.compile(r'\((\d+)x(\d+)\)')
-    if index:
+    if index is not 'all':
         return regex.match(text, index)
     else:
         return re.search(regex.pattern, text)
@@ -67,9 +67,10 @@ def norvig(text):
 
 def main():
     # Part 1
-    print len(decompress(read_text('input9.txt')))
+    print(len(decompress(read_text('input9.txt'))))
     # Part 2
-    print norvig(read_text('input9.txt'))
+    #print(len(full_decompress(read_text('input9.txt'))))
+    print(norvig(read_text('input9.txt')))
 
 
 if __name__ == '__main__':
