@@ -36,8 +36,8 @@ def decompress(text):
 
 def full_decompress(text):
     '''
-    Works for resonably sized strings (e.g. the test cases).
-    Would take too long to run on test input so implemented Peter Norvigs
+    It works for resonably sized strings (e.g. the test cases).
+    It would too long to run on test input so implemented Peter Norvigs
     strategy (not shown here) simply to get an answer, but again, this works
     ... you just need a super computer.
     '''
