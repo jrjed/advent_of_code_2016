@@ -1,11 +1,11 @@
 import re
 
 
-def read_ips(datafile):
+def read_lines(datafile):
     with open(datafile) as f:
-        ips = zip(*[line.strip().split() for line in f])
+        lines = list(f.readlines())
     f.close()
-    return list(ips[0])
+    return lines
 
 
 def tls_test(ip):
@@ -32,9 +32,9 @@ def ssl_test(ip):
 
 def main():
     # Part 1
-    print(sum(map(tls_test, read_ips('input7.txt'))))
+    print(sum(map(tls_test, read_lines('input7.txt'))))
     # Part 2 Guessed 239(too low)
-    print(sum(map(ssl_test, read_ips('input7.txt'))))
+    print(sum(map(ssl_test, read_lines('input7.txt'))))
 
 
 if __name__ == '__main__':
