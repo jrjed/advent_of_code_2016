@@ -19,7 +19,7 @@ class Screen(object):
 
 def directions(datafile):
     with open(datafile) as f:
-        contents = f.read().splitlines()
+        contents = f.readlines()
     f.close()
     return contents
 
