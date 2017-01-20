@@ -46,7 +46,7 @@ def decode(instructions, knum, xi, yi):
 
 def main():
     # instructions = ['ull','rrddd','lurdl','uuuud']
-    instructions = read_instructions('input2.txt')
+    instructions = read_lines('input2.txt')
     # Part 1
     decode(instructions, 1, xi=2, yi=2)
     # Part 2
