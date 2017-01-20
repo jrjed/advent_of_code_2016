@@ -1,8 +1,8 @@
-def read_instructions(datafile):
+def read_lines(datafile):
     f = open(datafile, 'r+')
-    instructions = [line.strip() for line in f]
+    lines = f.readlines()
     f.close()
-    return instructions
+    return lines
 
 
 def kpad(padnum):
