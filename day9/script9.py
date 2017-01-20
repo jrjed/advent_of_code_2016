@@ -3,7 +3,7 @@ import re
 
 def read_text(datafile):
     with open(datafile, 'r') as f:
-        text = ''.join([line for line in f]).strip()
+        text = f.read()
     f.close()
     return text
 
