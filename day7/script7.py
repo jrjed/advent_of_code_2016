@@ -18,12 +18,11 @@ def tls_test(ip):
 
 
 def ssl_test(ip):
-    for i, letter in enumerate(ip):
-        outside = ''.join([s.split(']')[-1] for s in ip.split('[')]).strip()
-        chunk = outside[i: i+3]
-        aba = re.search(r'([a-z])(?!\1)([a-z])\1', chunk)
-        if aba:
-            a, b = aba.group(1, 2)
+    outside = ''.join([s.split(']')[-1] for s in ip.split('[')]).strip()
+    aba = re.findall(r'(?=([a-z])(?!\1)([a-z])\1)', outside)
+    if aba:
+        for match in aba:
+            a, b = match
             bab = re.search(r'\[([a-z]*)(' + b + a + b + ')([a-z]*)\]', ip)
             if bab:
                 return True
